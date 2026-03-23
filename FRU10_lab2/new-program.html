@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Program</title>
+    <script>
+        /* Author: [Raymond Pae]
+        Date: 16rd March 2026
+        Unit: IS312 Web Application Development 
+        */
+        function validateForm() {
+            // Access the form using the name attribute
+            let x = document.forms["programForm"]["program_code"].value;
+            let y = document.forms["programForm"]["program_name"].value;
+            
+            // Check if fields are empty [cite: 30]
+            if (x == "" || y == "") {
+                alert("Error: All fields must be filled in."); 
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Enter New Program Details</h2>
+
+    <form name="programForm" action="add-new-program.php" onsubmit="return validateForm()" method="post">
+        
+        <label for="p_code">Program Code:</label><br>
+        <input type="text" id="p_code" name="program_code"><br><br>
+
+        <label for="p_name">Program Name:</label><br>
+        <input type="text" id="p_name" name="program_name"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+    <a href="index.html">Back to Home</a>
+
+</body>
+</html>
